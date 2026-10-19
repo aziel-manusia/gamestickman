@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#101a2b"><title>Stickman Battle — Mountain Arena V2</title><link rel="stylesheet" href="style.css">
+</head><body><main id="app">
+<header class="top"><div class="logo">STICKMAN <b>BATTLE</b><small>MOUNTAIN ARENA • V2</small></div><div class="topright"><strong id="clock">00:00 • FAJAR</strong><button id="pause">Ⅱ</button></div></header>
+<div class="mode-row"><b>MODE</b><button class="mode active" data-mode="pc">⌨ Laptop / PC</button><button class="mode" data-mode="mobile">📱 HP / Analog</button><div class="distance">ARENA <b>250 m</b> <span id="distance">Jarak: 50 m</span></div></div>
+<section class="hud">
+<div class="fighter"><div class="hp-title"><b>PLAYER</b><strong id="pHpText">2000 / 2000 HP</strong></div><div class="bar"><i id="pHp"></i></div><div class="sub"><span id="classLabel">Pendekar Pedang</span><span id="resourceText">—</span></div><div class="bar resource"><i id="resource"></i></div></div>
+<div class="fighter enemy"><div class="hp-title"><b>AI MUSUH</b><strong id="eHpText">2500 / 2500 HP</strong></div><div class="bar"><i id="eHp"></i></div><div class="sub"><span id="aiStatus">Membaca gerakan...</span><span>⚔ + 🏹</span></div></div>
+</section>
+<section class="arena"><canvas id="game"></canvas><div class="badge">GUNUNG • 250 M</div><div id="banner" class="banner hidden"></div><div class="mobilehint">Analog untuk bergerak • tombol serang dan skill untuk bertarung</div></section>
+<section class="bottom">
+<div class="loadout panel"><div><label for="weapon">SENJATA</label><select id="weapon"><option value="sword">⚔ Pedang — Pendekar Pedang</option><option value="bow">🏹 Busur — Pemanah</option><option value="spear">🔱 Tombak — Penombak</option><option value="magic">✨ Sihir — Penyihir</option></select></div><div id="magicWrap"><label for="magic">JENIS SIHIR</label><select id="magic"><option value="dark">☾ Dark</option><option value="light">✦ Light</option><option value="blood">♥ Blood</option></select></div><button id="restart">↻ Ulangi</button></div>
+<div class="panel"><div class="paneltitle">KONTROL & SKILL <small>Cooldown tampil di tombol</small></div><div class="skills">
+<button data-act="attack" class="action attack"><b>⚔ Serang</b><small>J / Tap</small></button>
+<button data-act="1" class="action"><b id="s1">Skill 1</b><small id="cd1">SIAP</small><i id="bar1"></i></button>
+<button data-act="2" class="action"><b id="s2">Skill 2</b><small id="cd2">SIAP</small><i id="bar2"></i></button>
+<button data-act="3" class="action"><b id="s3">Skill 3</b><small id="cd3">SIAP</small><i id="bar3"></i></button></div></div></section>
+<section id="mobileControls"><div class="joywrap"><div id="joy"><div id="knob"></div></div><small>ANALOG</small></div><div class="mobbuttons"><button data-act="jump">⬆<small>Lompat</small></button><button data-act="attack" class="attack">⚔<small>Serang</small></button><button data-act="1">①<small>Skill 1</small></button><button data-act="2">②<small>Skill 2</small></button><button data-act="3">③<small>Skill 3</small></button></div></section>
+<footer>PC: A/D atau ←/→ bergerak • W lompat • J serang • K/L/I skill • jangkauan diukur dalam meter</footer>
+</main><script src="script.js"></script></body></html>
